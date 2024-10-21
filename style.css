@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #70c5ce;
+    font-family: sans-serif;
+    overflow: hidden;
+}
+
+.game-container {
+    position: relative;
+    width: 100%;
+    max-width: 320px;
+    height: 100%;
+    max-height: 640px;
+    background-color: #4ec0ca;
+    overflow: hidden;
+    border: 2px solid #000;
+    display: flex;
+    justify-content: center;
+}
+
+#bird {
+    position: absolute;
+    width: 40px; /* Ajuste o tamanho conforme necessário */
+    height: 40px;
+    background: url('https://i.imgur.com/jOH6dPA.png') no-repeat center; /* URL da imagem do pássaro */
+    background-size: contain;
+    top: 200px;
+    left: 50px;
+}
+
+.pipe {
+    position: absolute;
+    width: 52px; /* Ajuste o tamanho conforme necessário */
+    background: url('https://i.imgur.com/NtFPiwb.png') no-repeat center; /* URL da imagem do cano */
+    background-size: contain;
+}
+
+.pipe-top {
+    top: 0;
+    right: 0;
+}
+
+.pipe-bottom {
+    bottom: 0;
+    right: 0;
+}
+
+#score {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 32px;
+    color: white;
+    z-index: 1;
+}
+
+/* Media query para ajustar o jogo em dispositivos menores */
+@media (max-width: 600px) {
+    .game-container {
+        max-width: 100%;
+        max-height: 100vh;
+    }
+
+    #bird {
+        width: 30px;
+        height: 30px;
+    }
+
+    .pipe {
+        width: 40px;
+    }
+
+    #score {
+        font-size: 28px;
+    }
+}
+
+/* Media query para telas grandes */
+@media (min-width: 768px) {
+    #bird {
+        width: 50px;
+        height: 50px;
+    }
+
+    .pipe {
+        width: 60px;
+    }
+
+    #score {
+        font-size: 36px;
+    }
+}
